@@ -1,0 +1,38 @@
+## Core data science
+pandas
+numpy
+scipy
+statsmodels
+
+## Machine learning
+scikit-learn
+xgboost
+BorutaShap @ git+https://github.com/cbonet/Boruta-Shap.git@fix-bug-130
+
+## Visualization
+matplotlib
+seaborn
+plotly
+
+## Experiment tracking & model management
+mlflow
+
+## Testing
+pytest
+
+## API development
+fastapi
+uvicorn
+
+## Core Quarto/Jupyter
+jupyter
+ipywidgets
+nbconvert
+ipykernel
+nbformat
+nbclient
+pyyaml
+
+## Misc
+joblib
+setuptools

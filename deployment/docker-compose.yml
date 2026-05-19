@@ -1,0 +1,16 @@
+services:
+  mlflow-server:
+    image: ghcr.io/mlflow/mlflow:latest
+    container_name: mlflow-tracking-server
+    ports:
+      - "5555:5000"
+    user: root  # <--- Agrega esto para que pueda escribir en el volumen montado
+    volumes:
+      - ./mlflow_data:/mlflow # <--- Simplifica la ruta
+    command: >
+      mlflow server
+      --host 0.0.0.0
+      --port 5000
+      --backend-store-uri sqlite:////mlflow/mlflow.db
+      --default-artifact-root /mlflow/artifacts
+    restart: unless-stopped

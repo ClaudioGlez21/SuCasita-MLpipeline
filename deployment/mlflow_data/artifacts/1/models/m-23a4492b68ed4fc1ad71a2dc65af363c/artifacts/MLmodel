@@ -1,0 +1,32 @@
+artifact_path: mlflow-artifacts:/1/models/m-23a4492b68ed4fc1ad71a2dc65af363c/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.13.12
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+is_signature_from_type_hint: false
+mlflow_version: 3.10.1
+model_id: m-23a4492b68ed4fc1ad71a2dc65af363c
+model_size_bytes: 28804782
+model_uuid: m-23a4492b68ed4fc1ad71a2dc65af363c
+prompts: null
+run_id: 8028ca1f9886492ea757d61fd69de0ea
+signature:
+  inputs: '[{"type": "double", "name": "remainder__latitude", "required": true}, {"type":
+    "double", "name": "baths__ratio", "required": true}, {"type": "double", "name":
+    "remainder__longitude", "required": true}, {"type": "double", "name": "beds__ratio",
+    "required": true}, {"type": "double", "name": "log__sqft", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-05-20 22:46:15.623784'

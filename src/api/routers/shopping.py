@@ -48,3 +48,55 @@ def add_to_cart(cart_item: CartItem):
     response = {"response": f"¡Item {cart_item.item} añadido!"}
 
     return response
+
+
+@router.delete("/delete-cart-item/{item_id}")
+def delete_cart_item(item_id: int):
+    '''
+    Elimina un item de la lista de compras.
+    
+    Argumentos
+    ----------
+    item_id: int
+        Posición del elemento a eliminar.
+    '''
+
+    ## Validar que la posición exista
+    valid = 0 <= item_id < len(shopping)
+
+    item = None
+    ## Eliminar el item de la lista
+    if valid:
+        item = shopping[item_id]
+        shopping.pop(item_id)
+
+    ## Crear respuesta
+    response = {"response": f"¡Item {item if valid else item_id} eliminado!"}
+
+    return response
+
+
+@router.put("/update-cart-item/{item_id}")
+def update_cart_item(item_id: int, cart_item: CartItem):
+    '''
+    Actualiza un elemento de la lista de compras.
+
+    Argumentos
+    ----------
+    item_id: int
+        Posición del item que se reemplazará.
+    cart_item: CartItem
+        Valor con el que se reemplazará.
+    '''
+
+    ## Validar que la posición exista
+    valid = 0 <= item_id < len(shopping)
+
+    ## Realizar el reemplazo
+    if valid:
+        shopping[item_id] = cart_item.item
+
+    ## Crear respuesta
+    response = {"response": f"¡Item {item_id} actualizado con el valor {cart_item.item}!"}
+
+    return response
